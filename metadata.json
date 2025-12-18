@@ -1,0 +1,7 @@
+{
+  "name": "ZONE - Safe Practice Space",
+  "description": "A safe, non-judgmental platform for introverts and beginners to practice skills quietly.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
