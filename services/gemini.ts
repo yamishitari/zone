@@ -1,7 +1,12 @@
 import { GoogleGenAI, GenerateContentResponse } from "@google/genai";
 import { ZoneId } from "../types";
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
+if (!apiKey) {
+  throw new Error("VITE_GEMINI_API_KEY is not set. Please add it to your .env file.");
+}
+
+const ai = new GoogleGenAI({ apiKey });
 
 const SYSTEM_INSTRUCTIONS = `
 You are a gentle, supportive, and non-judgmental practice partner named "Zone Guide".
